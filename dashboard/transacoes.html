@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transações | FinDash</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fa-solid fa-wallet logo-icon"></i>
+            <h2>FinDash</h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-chart-pie"></i> Visão Geral</a></li>
+            <li><a href="transacoes.html" class="active"><i class="fa-solid fa-arrow-right-arrow-left"></i> Transações</a></li>
+            <li><a href="relatorios.html"><i class="fa-solid fa-chart-line"></i> Relatórios</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="page-header">
+            <div>
+                <h1>Transações</h1>
+                <p class="subtitle">Gerencie suas entradas e saídas.</p>
+            </div>
+            <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Nova Transação</button>
+        </header>
+
+        <section class="transactions-full-page">
+            
+            <div class="filters-row">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar transação...">
+                </div>
+                
+                <div class="filter-options">
+                    <select class="filter-select">
+                        <option value="all">Todas as Categorias</option>
+                        <option value="food">Alimentação</option>
+                        <option value="transport">Transporte</option>
+                        <option value="income">Receita</option>
+                    </select>
+
+                    <select class="filter-select">
+                        <option value="30">Últimos 30 dias</option>
+                        <option value="7">Últimos 7 dias</option>
+                        <option value="this-year">Este ano</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Categoria</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                            <th>Valor</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="transaction-info">
+                                    <div class="icon-bg tech"><i class="fa-brands fa-apple"></i></div>
+                                    <span>Apple Store</span>
+                                </div>
+                            </td>
+                            <td>Assinaturas</td>
+                            <td>16 Mar, 2026</td>
+                            <td><span class="badge completed">Concluído</span></td>
+                            <td class="amount-expense">- R$ 49,90</td>
+                            <td><button class="action-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="transaction-info">
+                                    <div class="icon-bg work"><i class="fa-solid fa-briefcase"></i></div>
+                                    <span>Freela Dev Web</span>
+                                </div>
+                            </td>
+                            <td>Receita</td>
+                            <td>15 Mar, 2026</td>
+                            <td><span class="badge completed">Concluído</span></td>
+                            <td class="amount-income">+ R$ 2.500,00</td>
+                            <td><button class="action-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="transaction-info">
+                                    <div class="icon-bg transport"><i class="fa-solid fa-car"></i></div>
+                                    <span>Uber</span>
+                                </div>
+                            </td>
+                            <td>Transporte</td>
+                            <td>14 Mar, 2026</td>
+                            <td><span class="badge completed">Concluído</span></td>
+                            <td class="amount-expense">- R$ 32,50</td>
+                            <td><button class="action-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="transaction-info">
+                                    <div class="icon-bg food"><i class="fa-solid fa-burger"></i></div>
+                                    <span>Ifood</span>
+                                </div>
+                            </td>
+                            <td>Alimentação</td>
+                            <td>14 Mar, 2026</td>
+                            <td><span class="badge pending">Processando</span></td>
+                            <td class="amount-expense">- R$ 85,00</td>
+                            <td><button class="action-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <p>Mostrando 1 a 4 de 24 transações</p>
+                <div class="page-numbers">
+                    <button class="page-btn disabled"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+</main>
+
+    <div class="modal-overlay" id="transactionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nova Transação</h2>
+                <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <form class="modal-form">
+                <div class="input-group">
+                    <label for="desc">Descrição</label>
+                    <input type="text" id="desc" placeholder="Ex: Conta de Luz">
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="valor">Valor (R$)</label>
+                        <input type="number" id="valor" placeholder="0,00">
+                    </div>
+                    <div class="input-group">
+                        <label for="tipo">Tipo</label>
+                        <select id="tipo">
+                            <option value="saida">Saída (Despesa)</option>
+                            <option value="entrada">Entrada (Receita)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Salvar Transação</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

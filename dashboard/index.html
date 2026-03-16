@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Financeiro | Heitor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fa-solid fa-wallet logo-icon"></i>
+            <h2>FinDash</h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#" class="active"><i class="fa-solid fa-chart-pie"></i> Visão Geral</a></li>
+            <li><a href="transacoes.html"><i class="fa-solid fa-arrow-right-arrow-left"></i> Transações</a></li>
+            <li><a href="relatorios.html"><i class="fa-solid fa-chart-line"></i> Relatórios</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="top-header">
+            <div class="header-info">
+                <h1>Olá, Heitor 👋</h1>
+                <p>Aqui está o resumo das suas finanças hoje.</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-icon"><i class="fa-regular fa-bell"></i></button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Heitor+Dev&background=6366f1&color=fff" alt="Perfil">
+                </div>
+            </div>
+        </header>
+
+        <section class="summary-cards">
+            <div class="card balance-card">
+                <div class="card-header">
+                    <h3>Saldo Total</h3>
+                    <i class="fa-solid fa-wallet card-icon"></i>
+                </div>
+                <h2 class="amount">R$ 14.250,00</h2>
+                <p class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +2.5% em relação ao mês passado</p>
+            </div>
+
+            <div class="card income-card">
+                <div class="card-header">
+                    <h3>Entradas</h3>
+                    <i class="fa-solid fa-arrow-down card-icon income-icon"></i>
+                </div>
+                <h2 class="amount">R$ 5.400,00</h2>
+                <p class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +1.2%</p>
+            </div>
+
+            <div class="card expense-card">
+                <div class="card-header">
+                    <h3>Saídas</h3>
+                    <i class="fa-solid fa-arrow-up card-icon expense-icon"></i>
+                </div>
+                <h2 class="amount">R$ 1.840,50</h2>
+                <p class="trend negative"><i class="fa-solid fa-arrow-trend-down"></i> -4.5% (Ótimo!)</p>
+            </div>
+        </section>
+
+        <section class="recent-transactions">
+            <div class="section-header">
+                <h2>Últimas Transações</h2>
+                <a href="#" class="view-all">Ver todas</a>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Categoria</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="transaction-info">
+                                    <div class="icon-bg tech"><i class="fa-brands fa-apple"></i></div>
+                                    <span>Apple Store</span>
+                                </div>
+                            </td>
+                            <td>Assinaturas</td>
+                            <td>16 Mar, 2026</td>
+                            <td><span class="badge completed">Concluído</span></td>
+                            <td class="amount-expense">- R$ 49,90</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="transaction-info">
+                                    <div class="icon-bg work"><i class="fa-solid fa-briefcase"></i></div>
+                                    <span>Freela Desenvolvimento Web</span>
+                                </div>
+                            </td>
+                            <td>Receita</td>
+                            <td>15 Mar, 2026</td>
+                            <td><span class="badge completed">Concluído</span></td>
+                            <td class="amount-income">+ R$ 2.500,00</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="transaction-info">
+                                    <div class="icon-bg food"><i class="fa-solid fa-burger"></i></div>
+                                    <span>Ifood</span>
+                                </div>
+                            </td>
+                            <td>Alimentação</td>
+                            <td>14 Mar, 2026</td>
+                            <td><span class="badge pending">Processando</span></td>
+                            <td class="amount-expense">- R$ 85,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</main>
+
+    <div class="modal-overlay" id="transactionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nova Transação</h2>
+                <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <form class="modal-form">
+                <div class="input-group">
+                    <label for="desc">Descrição</label>
+                    <input type="text" id="desc" placeholder="Ex: Conta de Luz">
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="valor">Valor (R$)</label>
+                        <input type="number" id="valor" placeholder="0,00">
+                    </div>
+                    <div class="input-group">
+                        <label for="tipo">Tipo</label>
+                        <select id="tipo">
+                            <option value="saida">Saída (Despesa)</option>
+                            <option value="entrada">Entrada (Receita)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Salvar Transação</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

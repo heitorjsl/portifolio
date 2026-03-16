@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios | FinDash</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fa-solid fa-wallet logo-icon"></i>
+            <h2>FinDash</h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-chart-pie"></i> Visão Geral</a></li>
+            <li><a href="transacoes.html"><i class="fa-solid fa-arrow-right-arrow-left"></i> Transações</a></li>
+            <li><a href="relatorios.html" class="active"><i class="fa-solid fa-chart-line"></i> Relatórios</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="page-header">
+            <div>
+                <h1>Relatórios Financeiros</h1>
+                <p class="subtitle">Análise detalhada de receitas e despesas do ano.</p>
+            </div>
+            <button class="btn btn-outline"><i class="fa-solid fa-download"></i> Exportar PDF</button>
+        </header>
+
+        <section class="report-summary">
+            <div class="report-card">
+                <p>Receita Total (Ano)</p>
+                <h3 class="amount-income">R$ 45.200,00</h3>
+            </div>
+            <div class="report-card">
+                <p>Despesa Total (Ano)</p>
+                <h3 class="amount-expense">R$ 18.350,00</h3>
+            </div>
+            <div class="report-card highlight">
+                <p>Lucro Líquido</p>
+                <h3>R$ 26.850,00</h3>
+            </div>
+        </section>
+
+        <section class="charts-grid">
+            <div class="chart-container large-chart">
+                <div class="chart-header">
+                    <h2>Visão Mensal</h2>
+                    <select class="filter-select">
+                        <option>2026</option>
+                        <option>2025</option>
+                    </select>
+                </div>
+                <canvas id="barChart"></canvas>
+            </div>
+
+            <div class="chart-container small-chart">
+                <div class="chart-header">
+                    <h2>Despesas por Categoria</h2>
+                </div>
+                <canvas id="doughnutChart"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

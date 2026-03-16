@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Navalha & Cia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="barber.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+                <div class="logo">Navalha<span>&Cia</span></div>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#servicos">Serviços</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="contato.html" style="color: var(--gold);">Contato</a>
+            </nav>
+            <a href="https://wa.me/5511999999999" target="_blank" class="btn btn-gold hidden-mobile">Agendar Horário</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Fale Conosco</h1>
+                <p>Agende seu horário, tire suas dúvidas ou venha tomar uma cerveja com a gente.</p>
+            </div>
+        </section>
+
+        <section class="contact-section section-padding">
+            <div class="container contact-page-grid">
+                
+                <div class="contact-details">
+                    <div class="section-title left-align">
+                        <h2>Nossos Contatos</h2>
+                        <div class="divider"></div>
+                    </div>
+                    
+                    <p class="contact-desc">Prefere falar direto com a gente? Mande um WhatsApp ou dê uma passada na barbearia. Será um prazer te receber.</p>
+
+                    <div class="info-group">
+                        <h3>📍 Onde Estamos</h3>
+                        <p>Rua Fictícia, 123 - Bairro Centro<br>São Paulo, SP - 01000-000</p>
+                    </div>
+
+                    <div class="info-group">
+                        <h3>📱 Atendimento</h3>
+                        <p>WhatsApp: (11) 99999-9999<br>Telefone: (11) 3333-3333</p>
+                    </div>
+
+                    <div class="info-group">
+                        <h3>🕒 Horário de Funcionamento</h3>
+                        <p>Segunda a Sexta: 09:00 às 20:00<br>Sábado: 08:00 às 18:00<br>Domingo: Fechado para descanso</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="barber-form" action="#" method="POST">
+                        <div class="input-wrapper">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" placeholder="Como devemos te chamar?" required>
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label for="telefone">WhatsApp</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="servico">Qual serviço deseja?</label>
+                            <select id="servico" name="servico">
+                                <option value="corte">Corte Clássico</option>
+                                <option value="barba">Barba Terapia</option>
+                                <option value="combo">Combo: Cabelo + Barba</option>
+                                <option value="outro">Outro assunto</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label for="mensagem">Mensagem (Opcional)</label>
+                            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Alguma observação ou preferência de barbeiro?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-gold btn-block">Enviar Solicitação</button>
+                    </form>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <h3 class="logo">Navalha<span>&Cia</span></h3>
+                <p>A melhor barbearia da cidade. Venha dar um trato no visual e resenhar com a gente.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Onde Estamos</h3>
+                <p>Rua Fictícia, 123 - Centro</p>
+                <p>São Paulo, SP</p>
+                <p>WhatsApp: (11) 99999-9999</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Navalha & Cia. Projeto fictício desenvolvido por Heitor.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
